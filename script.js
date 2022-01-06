@@ -35,11 +35,10 @@ function capitalizeFirstLetter(str) {
 function playRound() {
   let playerSelection = getPlayerSelection();
   let computerSelection = getComputerSelection();
-  //console.log(computerSelection);
   // check for tie
   if (playerSelection === computerSelection) {
     console.log(`You both picked ${playerSelection}`);
-    return ['tie', ''] // 'You tied! Pick again.';
+    return ['tie', ''];
     // if player picks rock
   } else if (playerSelection === 'rock') {
     console.log(`You picked Rock. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
@@ -74,7 +73,7 @@ function game() {
     // switch case to log the result, display details, and increment scores accordingly
     switch(result) {
       case 'tie':
-        console.log(`You tied! ${details}`);
+        console.log(`You tied!`);
         break;
       case 'win':
         console.log(`You win! ${details}`);
