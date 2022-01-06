@@ -13,13 +13,13 @@ function getPlayerSelection() {
   // create a loop - use WHILE loop because number of iterations is unknown (wait for player to enter valid selection)
   while (true) {
     // prompt for player selection.
-    let playerSelection = prompt('Select one: rock, paper, or scissors.');
+    let selection = prompt('Select one: rock, paper, or scissors.');
     // check if selection is null; if so, restart the loop.
-    if (playerSelection === null) continue;
+    if (selection === null) continue;
     // otherwise, trim the input and convert to lowercase
-    playerSelection = playerSelection.trim().toLowerCase();
+    selection = selection.trim().toLowerCase();
     // if selection is valid return it as a string, breaking the loop.
-    if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') return playerSelection;
+    if (selection === 'rock' || selection === 'paper' || selection === 'scissors') return selection;
     // otherwise prompt for reentry and restart loop.
     alert('Please enter a valid selection.');
   }
@@ -43,18 +43,18 @@ function playRound() {
     // if player picks rock
   } else if (playerSelection === 'rock') {
     console.log(`You picked Rock. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
-    if (computerSelection === 'paper') return ['lose', 'Paper beats Rock.'] // 'You lose! Paper beats Rock.';
-    if (computerSelection === 'scissors') return ['win', 'Rock beats Scissors.'] // 'You win! Rock beats Scissors.';
+    if (computerSelection === 'paper') return ['lose', 'Paper beats Rock.']
+    if (computerSelection === 'scissors') return ['win', 'Rock beats Scissors.']
     // if player picks paper
   } else if (playerSelection === 'paper') {
     console.log(`You picked Paper. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
-    if (computerSelection === 'rock') return ['win', 'Paper beats Rock.'] // 'You win! Paper beats Rock.';
-    if (computerSelection === 'scissors') return ['lose', 'Scissors beats Paper'] // 'You lose! Scissors beat Paper.';
+    if (computerSelection === 'rock') return ['win', 'Paper beats Rock.']
+    if (computerSelection === 'scissors') return ['lose', 'Scissors beats Paper']
     // if player picks scissors
   } else if (playerSelection === 'scissors') {
     console.log(`You picked Scissors. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
-    if (computerSelection === 'rock') return ['lose', 'Rock beats Scissors.'] // 'You lose! Rock beats Scissors.';
-    if (computerSelection === 'paper') return ['win', 'Scissors beats Paper.'] // 'You win! Scissors beats Paper.';
+    if (computerSelection === 'rock') return ['lose', 'Rock beats Scissors.']
+    if (computerSelection === 'paper') return ['win', 'Scissors beats Paper.']
   }
 };
 
@@ -87,6 +87,14 @@ function game() {
     // log the current scores
     console.log(`The current score is - Player: ${playerScore} | Computer: ${computerScore}`)
   }
+  // after five rounds compare the scores
+  console.log('FINAL RESULTS')
+  console.log(`You scored: ${playerScore}. Computer scored: ${computerScore}.`)
+  let finalResult = '';
+  if (playerScore === computerScore) finalResult = 'You tied the computer! Thanks for playing.';
+  if (playerScore > computerScore) finalResult = 'Congratulations! You defeated the computer!';
+  if (playerScore < computerScore) finalResult = 'Oh no! You were defeated by the computer!';
+  console.log(finalResult);
 }
 
 game();
