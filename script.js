@@ -42,18 +42,18 @@ function playRound() {
     // if player picks rock
   } else if (playerSelection === 'rock') {
     console.log(`You picked Rock. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
-    if (computerSelection === 'paper') return ['lose', 'Paper beats Rock.']
-    if (computerSelection === 'scissors') return ['win', 'Rock beats Scissors.']
+    if (computerSelection === 'paper') return ['lose', 'Paper beats Rock.'];
+    if (computerSelection === 'scissors') return ['win', 'Rock beats Scissors.'];
     // if player picks paper
   } else if (playerSelection === 'paper') {
     console.log(`You picked Paper. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
-    if (computerSelection === 'rock') return ['win', 'Paper beats Rock.']
-    if (computerSelection === 'scissors') return ['lose', 'Scissors beats Paper']
+    if (computerSelection === 'rock') return ['win', 'Paper beats Rock.'];
+    if (computerSelection === 'scissors') return ['lose', 'Scissors beats Paper'];
     // if player picks scissors
   } else if (playerSelection === 'scissors') {
     console.log(`You picked Scissors. Computer picked ${capitalizeFirstLetter(computerSelection)}.`);
-    if (computerSelection === 'rock') return ['lose', 'Rock beats Scissors.']
-    if (computerSelection === 'paper') return ['win', 'Scissors beats Paper.']
+    if (computerSelection === 'rock') return ['lose', 'Rock beats Scissors.'];
+    if (computerSelection === 'paper') return ['win', 'Scissors beats Paper.'];
   }
 };
 
@@ -84,11 +84,11 @@ function game() {
         computerScore++;
     }
     // log the current scores
-    console.log(`The current score is - Player: ${playerScore} | Computer: ${computerScore}`)
+    console.log(`The current score is - Player: ${playerScore} | Computer: ${computerScore}`);
   }
   // after five rounds compare the scores
-  console.log('FINAL RESULTS')
-  console.log(`You scored: ${playerScore}. Computer scored: ${computerScore}.`)
+  console.log('FINAL RESULTS');
+  console.log(`You scored: ${playerScore}. Computer scored: ${computerScore}.`);
   let finalResult = '';
   if (playerScore === computerScore) finalResult = 'You tied the computer! Thanks for playing.';
   if (playerScore > computerScore) finalResult = 'Congratulations! You defeated the computer!';
